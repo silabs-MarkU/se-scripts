@@ -6,7 +6,7 @@ APPLICATION=${3}
 ENCRYPT_KEY=${4}
 SIGN_KEY=${5}
 
-DEVICE=EFR32ZG23B020F512IM40
+DEVICE=ZGM230SB27HGN3
 
 commander.exe device masserase -s ${WSTK_SERIAL} -d ${DEVICE} 
 commander.exe device reset -s ${WSTK_SERIAL} -d ${DEVICE}
