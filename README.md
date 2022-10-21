@@ -34,13 +34,18 @@ Any deviation from the protocol or projects below may require changes to these s
 2. Open the .slcp file and adjust the configuration as follows:
    Software Components --> Platform --> bootloader --> Core --> Bootloader Core --> Configure.
 3. Adjust bootloader settigns as displayed below to create `base` bootloader image:
+
 ![btl_settings_v2](https://user-images.githubusercontent.com/111395060/197108289-bb508f32-7262-4f57-989e-5ac51f8e0bd3.png)
+
 5. Build bootloader project and save resulting .hex file in a location that you can later access. Append the filename with `_v1.hex` 
 6. Increment the bootloader version to 2, as shown to create an `update` bootloader image for packaging in a .gbl file:
-![bootloader configure](https://user-images.githubusercontent.com/111395060/197107691-15fd277f-1ca2-4c0f-af56-9c2f390fa1ff.png)
+
+![btl_settings](https://user-images.githubusercontent.com/111395060/197110507-764d261f-30fe-4588-bbaf-093c4b011189.png)
+
 7. Build bootloader project and save resulting .hex file in a location that you can later access. Append the filename with `_v2.hex` 
 
 #### Create Application Image
+
 1. Using GSDK 4.1.2, create a `zwave_soc_switch_on_off` project.
 2. Open the .slcp file and make and make any required adjustments to the region
 3. Software Components --> Z-Wave --> Z-Wave Core Component --> Configure
