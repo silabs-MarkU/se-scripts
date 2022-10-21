@@ -67,7 +67,7 @@ Any deviation from the protocol or projects below may require changes to these s
 4. You will see output as follows, but *Make sure to store the resulting keys! Your device cannot be updated in the future without them!*   
 
 ```
-./main.sh junk_value_1 ../images/bootloader-storage-internal-single-512k_gsdk_4.1.2.hex ../images/bootloader-storage-internal-single-512k_gsdk4.1.2.hex ../images/zwave_soc_switch_on_off_gsdk_4.1.2.hex ../ring-00291341/test_user_config.json junk_value_2
+./main.sh junk_value_1 ../images/bootloader-storage-internal-single-512k_gsdk_4.1.2.hex ../images/bootloader-storage-internal-single-512k_gsdk4.1.2.hex ../images/zwave_soc_switch_on_off_gsdk_4.1.2.hex test_user_config.json junk_value_2
 
 Program: commander.exe was found..
 Requested device 3453434 was not found!
@@ -87,7 +87,7 @@ QObject::connect: No such signal UtilCommandHandler::errorEncountered(QString)
 QObject::connect: No such signal UtilCommandHandler::infoMessage(QString)
 Writing EC tokens to sign_key.token...
 DONE
-Parsing file ../images/bootloader-storage-internal-single-512k_gsdk4.1.2_with_ben_ring_v1.hex...
+Parsing file ../images/bootloader-storage-internal-single-512k_v1.hex...
 Found Application Properties at 0x080028a0
 Writing Application Properties signature pointer to point to 0x080029d8
 Setting signature type in Application Properties: 0x00000001
@@ -96,7 +96,7 @@ R = 87124EB2C7D5C92D1AA337BEFEF2DA4204717185A307978DCA7B11CD49F49A8D
 S = 959837ACBE72390227872EA8F1E06856BE9D59459514DF75B52E7D282FE46330
 Writing to bootloader-base-signed.hex...
 DONE
-Parsing file ../images/bootloader-storage-internal-single-512k_gsdk4.1.2_with_ben_ring_v2.hex...
+Parsing file ../images/bootloader-storage-internal-single-512k_v2.hex...
 Found Application Properties at 0x080028a0
 Writing Application Properties signature pointer to point to 0x080029d8
 Setting signature type in Application Properties: 0x00000001
