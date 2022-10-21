@@ -22,21 +22,46 @@ above. General knowledge of Simplicity Studio is assumed.
 
 The project was designed for use with Z-Wave protocol on the ZGM230, on a GSDK greater than 4.1 (though not all versions are tested).
 
-The main.sh script has some automatic features, such as scanning for device part number and WSTK serial. The example below
-exercises these features by intentionally leaving out WSTK and DEVICE in command below, allowing the script to find these values.
+The main.sh script has some automatic features, such as scanning for device part number and WSTK serial. This will be described more 
+in the steps that follow.
 
 Any deviation from the protocol or projects below may require changes to these steps.
 
 ### Guide
 
+#### Create Bootloader Images
 1. Using GSDK 4.1.2, create a `bootloader-storage-internal-single-512k` project.
 2. Open the .slcp file and adjust the configuration as follows:
    Software Components --> Platform --> bootloader --> Core --> Bootloader Core --> Configure.
-3. Adjust bootloader settigns as displayed below:
+3. Adjust bootloader settigns as displayed below to create `base` bootloader image:
+![btl_settings_v2](https://user-images.githubusercontent.com/111395060/197108289-bb508f32-7262-4f57-989e-5ac51f8e0bd3.png)
+5. Build bootloader project and save resulting .hex file in a location that you can later access. Append the filename with `_v1.hex` 
+6. Increment the bootloader version to 2, as shown to create an `update` bootloader image for packaging in a .gbl file:
+![bootloader configure](https://user-images.githubusercontent.com/111395060/197107691-15fd277f-1ca2-4c0f-af56-9c2f390fa1ff.png)
+7. Build bootloader project and save resulting .hex file in a location that you can later access. Append the filename with `_v2.hex` 
 
-![bootloader configure](https://user-images.githubusercontent.com/111395060/197106678-fbff2c28-9045-43f2-9501-a3afcc466f06.png)
+#### Create Application Image
+1. Using GSDK 4.1.2, create a `zwave_soc_switch_on_off` project.
+2. Open the .slcp file and make and make any required adjustments to the region
+3. Software Components --> Z-Wave --> Z-Wave Core Component --> Configure
+4. USLR was selected for our purposes, shown below:
+![uslr](https://user-images.githubusercontent.com/111395060/197109020-ecc84082-6557-4bfe-9498-22c776762a11.png)
+5. Copy the resulting .hex image to the same location where you've placed your bootloader `_v1` and `_v2` images above.
 
+#### Keys
+1. If you have existing keys that have been used with your target device, then locate them, as they'll be used in next steps.
+2. If not, you'll be leaving the key parameters of the main.sh script blank, and the script will generate new keys for use with your device.
+   * Your device must not have been used for Secure Boot previously if using this option. You must locate keys tied to that device otherwise.
 
+#### Running the script:
+
+1. As mentioned above, the script performs some steps automatically if desired (identifying the device part number, locating the WSTK, and generating keys).
+   The call to the main script in the example below makes use of these automatic features by placing `junk` values for device and WSTK, as well as leaving
+   out parameters for existing keys.
+2. First call the script with no parameters, as `./master.sh`. You will receive instructions on input parameters.
+3. Next call the script with your specific parameters. The call below will function properly on a new ZGM230 Thunderboard if all instructions were followed to this
+   point.
+4. You will see output as follows, but *Make sure to store the resulting keys! Your device cannot be updated in the future without them!*   
 
 ```
 ./master.sh junk_value_1 ../images/bootloader-storage-internal-single-512k_gsdk_4.1.2.hex ../images/bootloader-storage-internal-single-512k_gsdk4.1.2.hex ../images/zwave_soc_switch_on_off_gsdk_4.1.2.hex ../ring-00291341/test_user_config.json junk_value_2
@@ -151,3 +176,5 @@ Device has serial number 0000000000000000a49e69fffe049879
 DONE
 DONE
 ```
+
+#### OTA Testing (TBD)
