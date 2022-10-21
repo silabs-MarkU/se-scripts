@@ -32,7 +32,10 @@ Any deviation from the protocol or projects below may require changes to these s
 1. Using GSDK 4.1.2, create a `bootloader-storage-internal-single-512k` project.
 2. Open the .slcp file and adjust the configuration as follows:
    Software Components --> Platform --> bootloader --> Core --> Bootloader Core --> Configure.
-3. 
+3. Adjust bootloader settigns as displayed below:
+
+![bootloader configure](https://user-images.githubusercontent.com/111395060/197106678-fbff2c28-9045-43f2-9501-a3afcc466f06.png)
+
 
 
 ```
