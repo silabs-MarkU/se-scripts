@@ -30,14 +30,14 @@ Any deviation from the protocol or projects below may require changes to these s
 ### Guide
 
 #### Create Bootloader Images
-1. Using GSDK 4.1.2, create a `bootloader-storage-internal-single-512k` project.
+1. Using GSDK 4.1.2, create a `bootloader-storage-internal-single-512k` project
 2. Open the .slcp file and adjust the configuration as follows:
-   Software Components --> Platform --> bootloader --> Core --> Bootloader Core --> Configure.
+   Software Components --> Platform --> bootloader --> Core --> Bootloader Core --> Configure
 3. Adjust bootloader settigns as displayed below to create `base` bootloader image:
 
 ![btl_settings_v2](https://user-images.githubusercontent.com/111395060/197108289-bb508f32-7262-4f57-989e-5ac51f8e0bd3.png)
 
-5. Build bootloader project and save resulting .hex file in a location that you can later access. Append the filename with `_v1.hex` 
+5. Build bootloader project and save resulting .hex file in a location that you can later access. Append the filename with `_v1.hex`
 6. Increment the bootloader version to 2, as shown to create an `update` bootloader image for packaging in a .gbl file:
 
 ![btl_settings](https://user-images.githubusercontent.com/111395060/197110507-764d261f-30fe-4588-bbaf-093c4b011189.png)
@@ -46,26 +46,26 @@ Any deviation from the protocol or projects below may require changes to these s
 
 #### Create Application Image
 
-1. Using GSDK 4.1.2, create a `zwave_soc_switch_on_off` project.
+1. Using GSDK 4.1.2, create a `zwave_soc_switch_on_off` project
 2. Open the .slcp file and make and make any required adjustments to the region
 3. Software Components --> Z-Wave --> Z-Wave Core Component --> Configure
 4. USLR was selected for our purposes, shown below:
 ![uslr](https://user-images.githubusercontent.com/111395060/197109020-ecc84082-6557-4bfe-9498-22c776762a11.png)
-5. Copy the resulting .hex image to the same location where you've placed your bootloader `_v1` and `_v2` images above.
+5. Copy the resulting .hex image to the same location where you've placed your bootloader `_v1` and `_v2` images above
 
 #### Keys
-1. If you have existing keys that have been used with your target device, then locate them, as they'll be used in next steps.
-2. If not, you'll be leaving the key parameters of the main.sh script blank, and the script will generate new keys for use with your device.
-   * Your device must not have been used for Secure Boot previously if using this option. You must locate keys tied to that device otherwise.
+1. If you have existing keys that have been used with your target device, then locate them, as they'll be used in next steps
+2. If not, you'll be leaving the key parameters of the main.sh script blank, and the script will generate new keys for use with your device
+   * Your device must not have been used for Secure Boot previously if using this option. You must locate keys tied to that device otherwise
 
 #### Running the script:
 
-1. As mentioned above, the script performs some steps automatically if desired (identifying the device part number, locating the WSTK, and generating keys).
+1. As mentioned above, the script performs some steps automatically if desired (identifying the device part number, locating the WSTK, and generating keys)
    The call to the main script in the example below makes use of these automatic features by placing `junk` values for device and WSTK, as well as leaving
-   out parameters for existing keys.
-2. First call the script with no parameters, as `./master.sh`. You will receive instructions on input parameters.
+   out parameters for existing keys
+2. First call the script with no parameters, as `./master.sh`. You will receive instructions on input parameters
 3. Next call the script with your specific parameters. The call below will function properly on a new ZGM230 Thunderboard if all instructions were followed to this
-   point.
+   point
 4. You will see output as follows, but *Make sure to store the resulting keys! Your device cannot be updated in the future without them!*   
 
 ```
