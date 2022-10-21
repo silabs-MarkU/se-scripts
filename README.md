@@ -27,6 +27,11 @@ in the steps that follow.
 
 Any deviation from the protocol or projects below may require changes to the following steps.
 
+### To be completed
+1. We know that BTL over OTA is successful with the memory addresses proposed below - such that we don't walk over the App, but 
+   we have yet to test BTL + SE over OTA with the current memory addresses.
+2. We would like to document the Z-Wave memory map here, for making fast decisions on staging locations during OTAs.
+
 ### Guide:
 
 #### Create Bootloader Images:
