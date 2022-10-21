@@ -15,7 +15,7 @@ This project has been retained as-is, as a reference, and can be found in direct
 
 The scripts were then adapted to be a bit more generic, though still tied to Z-Wave protocol, and most of the points above.
 
-## Project secure-boot-btl-zwave
+## Project secure-boot-btl-zwave:
 
 The following instructions walk through using the secure-boot-btl-zwave project toward satisfying all in the description
 above. General knowledge of Simplicity Studio is assumed.
@@ -27,9 +27,9 @@ in the steps that follow.
 
 Any deviation from the protocol or projects below may require changes to these steps.
 
-### Guide
+### Guide:
 
-#### Create Bootloader Images
+#### Create Bootloader Images:
 1. Using GSDK 4.1.2, create a `bootloader-storage-internal-single-512k` project
 2. Open the .slcp file and adjust the configuration as follows:
    Software Components --> Platform --> bootloader --> Core --> Bootloader Core --> Configure
@@ -53,7 +53,7 @@ Any deviation from the protocol or projects below may require changes to these s
 ![uslr](https://user-images.githubusercontent.com/111395060/197109020-ecc84082-6557-4bfe-9498-22c776762a11.png)
 5. Copy the resulting .hex image to the same location where you've placed your bootloader `_v1` and `_v2` images above
 
-#### Keys
+#### Keys:
 1. If you have existing keys that have been used with your target device, then locate them, as they'll be used in next steps
 2. If not, you'll be leaving the key parameters of the main.sh script blank, and the script will generate new keys for use with your device
    * Your device must not have been used for Secure Boot previously if using this option. You must locate keys tied to that device otherwise
@@ -182,4 +182,4 @@ DONE
 DONE
 ```
 
-#### OTA Testing (TBD)
+#### OTA Testing (TBD):
