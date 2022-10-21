@@ -11,8 +11,6 @@ This repo was initially created with a very specific purpose:
 4. .. not using the Application partition for staging
 5. .. by changing the bootloader project memory addresses
 
-This project has been retained as-is, as a reference, and can be found in directory ring-00291341, complete with spelling errors.
-
 The scripts were then adapted to be a bit more generic, though still tied to Z-Wave protocol, and most of the points above.
 
 ## Project secure-boot-btl-zwave:
