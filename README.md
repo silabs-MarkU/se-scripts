@@ -182,4 +182,20 @@ DONE
 DONE
 ```
 
-#### OTA Testing (TBD):
+#### OTA Testing:
+
+1. Use Simplicity PC Controller to create a Z-Wave network
+2. Provision the device to the network, and use Basic On Off to confirm that the device toggles the LED (or another method if using custom hardware)
+3. Check firmware versions, as shown below, and note them (click `Get` to refresh):
+
+![before](https://user-images.githubusercontent.com/111395060/197111532-c0c43c60-efe7-4c2c-9c6a-9637c0defa5a.png)
+
+In the image above, `Target 1 - Firmware Id: 00 01` represents the bootloader and its firmware version.
+4. Section `Running the script` will have created a `bootloader-upgrade.gbl` file in the same directory as main.sh. This .gbl file signs both the inner
+   bootloader image, and the outer .gbl file.
+5. Use Simplicity PC Controller to perform an OTA.
+6. Click `Get` again to refresh the firmware version, and you should see that it has incremented:
+
+![after](https://user-images.githubusercontent.com/111395060/197112069-17625b4e-f728-4336-8e0f-45e37aa22d1a.png)
+
+In the image above, `Target 1 - Firmware Id: 00 02` represents the bootloader and its `updated` firmware version.
