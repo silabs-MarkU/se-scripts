@@ -61,13 +61,13 @@ Any deviation from the protocol or projects below may require changes to these s
 1. As mentioned above, the script performs some steps automatically if desired (identifying the device part number, locating the WSTK, and generating keys)
    The call to the main script in the example below makes use of these automatic features by placing `junk` values for device and WSTK, as well as leaving
    out parameters for existing keys
-2. First call the script with no parameters, as `./master.sh`. You will receive instructions on input parameters
+2. First call the script with no parameters, as `./main.sh`. You will receive instructions on input parameters
 3. Next call the script with your specific parameters. The call below will function properly on a new ZGM230 Thunderboard if all instructions were followed to this
    point
 4. You will see output as follows, but *Make sure to store the resulting keys! Your device cannot be updated in the future without them!*   
 
 ```
-./master.sh junk_value_1 ../images/bootloader-storage-internal-single-512k_gsdk_4.1.2.hex ../images/bootloader-storage-internal-single-512k_gsdk4.1.2.hex ../images/zwave_soc_switch_on_off_gsdk_4.1.2.hex ../ring-00291341/test_user_config.json junk_value_2
+./main.sh junk_value_1 ../images/bootloader-storage-internal-single-512k_gsdk_4.1.2.hex ../images/bootloader-storage-internal-single-512k_gsdk4.1.2.hex ../images/zwave_soc_switch_on_off_gsdk_4.1.2.hex ../ring-00291341/test_user_config.json junk_value_2
 
 Program: commander.exe was found..
 Requested device 3453434 was not found!
