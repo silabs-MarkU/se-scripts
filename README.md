@@ -17,15 +17,15 @@ I'll be building this repo out to include other parts/scenarios. For now the fir
 
 ## Project secure-boot-btl-zwave:
 
-The following instructions walk through using the secure-boot-btl-zwave project toward satisfying all in the description
+The following instructions walk through using the secure-boot-btl-zwave project toward satisfying all items in the description
 above. General knowledge of Simplicity Studio is assumed.
 
-The project was designed for use with Z-Wave protocol on the ZGM230, on a GSDK greater than 4.1 (though not all versions are tested).
+The project was designed for use with the Z-Wave protocol on the ZGM230 on a GSDK greater than 4.1 (though not all versions are tested).
 
-The main.sh script has some automatic features, such as scanning for device part number and WSTK serial. This will be described more 
+The main.sh script has some automatic features, such as scanning for device part number and WSTK emulator. This will be described more 
 in the steps that follow.
 
-Any deviation from the protocol or projects below may require changes to these steps.
+Any deviation from the protocol or projects below may require changes to the following steps.
 
 ### Guide:
 
@@ -67,6 +67,8 @@ Any deviation from the protocol or projects below may require changes to these s
 3. Next call the script with your specific parameters. The call below will function properly on a new ZGM230 Thunderboard if all instructions were followed to this
    point
 4. You will see output as follows, but *Make sure to store the resulting keys! Your device cannot be updated in the future without them!*   
+
+Below we use the `../images/` folder as the location where we placed our `bootloader_v1/_v2` and application binaries from steps above.
 
 ```
 ./main.sh junk_value_1 ../images/bootloader-storage-internal-single-512k_gsdk_4.1.2.hex ../images/bootloader-storage-internal-single-512k_gsdk4.1.2.hex ../images/zwave_soc_switch_on_off_gsdk_4.1.2.hex ../ring-00291341/test_user_config.json junk_value_2
@@ -185,7 +187,7 @@ DONE
 #### OTA Testing:
 
 1. Use Simplicity PC Controller to create a Z-Wave network
-2. Provision the device to the network, and use Basic On Off to confirm that the device toggles the LED (or another method if using custom hardware)
+2. Provision the device to the network, and use Basic On/Off to confirm that the device toggles the LED (or another method if using custom hardware)
 3. Check firmware versions, as shown below, and note them (click `Get` to refresh):
 
 ![before](https://user-images.githubusercontent.com/111395060/197111532-c0c43c60-efe7-4c2c-9c6a-9637c0defa5a.png)
