@@ -13,7 +13,7 @@ This repo was initially created with a very specific purpose:
 
 The scripts were then adapted to be a bit more generic, though still tied to Z-Wave protocol, and most of the points above.
 
-I'll be building this repo out to include other parts/scenarios. For now the first project begins below:
+We'll be building this repo out to include other parts/scenarios. For now the first project begins below:
 
 ## Project secure-boot-btl-zwave:
 
