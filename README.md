@@ -1,10 +1,8 @@
 # se-scripts
 
-## CAUTION! THIS REPO IS NOT TO BE SHARED WITH CUSTOMERS! CAUTION!
-
 This repo was initially created with a very specific purpose:
 
-1. Solve an OTA issue with Secure Boot enabled ..
+1. Solve an OTA space constraint with Secure Boot enabled ..
 2. .. using a specific GSDK version, with a specific Z-Wave protocol version
 3. .. using an independent BTL bootload (bootloader sent alone in a GBL)
     * This project is used for the Z-Wave protocol OTA, which consumes too much space for a GBL containing App + BTL + SE.
@@ -13,7 +11,7 @@ This repo was initially created with a very specific purpose:
 
 The scripts were then adapted to be a bit more generic, though still tied to Z-Wave protocol, and most of the points above.
 
-We'll be building this repo out to include other parts/scenarios. For now the first project begins below:
+I'll be building this repo out to include other parts/scenarios. For now the first project begins below:
 
 ## Project secure-boot-btl-zwave:
 
